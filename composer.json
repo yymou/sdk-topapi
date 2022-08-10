@@ -1,0 +1,25 @@
+{
+  "name": "vendor_name/topsdk-topapi",
+  "description": "淘宝官方php7sdk",
+  "minimum-stability": "stable",
+  "license": "MIT",
+  "keywords": [
+    "topsdk",
+    "taobao",
+    "topapi"
+  ],
+  "authors": [
+    {
+      "name": "yangyanlei",
+      "email": "875167485@qq.com"
+    }
+  ],
+  "require": {
+    "php": "^7.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "Topsdk\\Topapi\\": "src/"
+    }
+  }
+}
