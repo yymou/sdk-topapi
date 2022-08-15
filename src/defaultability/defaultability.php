@@ -30,6 +30,8 @@ use Topsdk\Topapi\Defaultability\Request\TaobaoSkusCustomGetRequest;
 use Topsdk\Topapi\Defaultability\Request\TaobaoSubusersGetRequest;
 use Topsdk\Topapi\Defaultability\Request\TaobaoSubuserFullinfoGetRequest;
 use Topsdk\Topapi\Defaultability\Request\TaobaoSubuserInfoUpdateRequest;
+use Topsdk\Topapi\Defaultability\Request\TaobaoTmcUserCancelRequest;
+use Topsdk\Topapi\Defaultability\Request\TaobaoTmcUserPermitRequest;
 use Topsdk\Topapi\Defaultability\Request\TaobaoSellercenterSubusersPageRequest;
 
 class Defaultability {
@@ -208,6 +210,18 @@ class Defaultability {
     **/
     public function taobaoSubuserInfoUpdate(TaobaoSubuserInfoUpdateRequest $request,string $session) {
         return $this->client->executeWithSession("taobao.subuser.info.update", $request->toMap(), $request->toFileParamMap(), $session);
+    }
+    /**
+        取消用户的消息服务
+    **/
+    public function taobaoTmcUserCancel(TaobaoTmcUserCancelRequest $request) {
+        return $this->client->execute("taobao.tmc.user.cancel", $request->toMap(), $request->toFileParamMap());
+    }
+    /**
+        为已授权的用户开通消息服务
+    **/
+    public function taobaoTmcUserPermit(TaobaoTmcUserPermitRequest $request,string $session) {
+        return $this->client->executeWithSession("taobao.tmc.user.permit", $request->toMap(), $request->toFileParamMap(), $session);
     }
     /**
         通过主账号登陆态分页查询子账号列表
